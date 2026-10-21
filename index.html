@@ -1,0 +1,700 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TriStar 1947 — Utkal Biryani House · The Kalinga Kitchen · Chilika Banquet</title>
+<meta name="description" content="TriStar 1947: three houses, one Odia table. Utkal Biryani House, The Kalinga Kitchen and Chilika Banquet.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='16' fill='%231d2433'/%3E%3Ctext x='16' y='21' font-family='Georgia,serif' font-size='13' text-anchor='middle' fill='%23d9b968'%3E47%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ivory:#f6f1e6; --paper:#fbf9f3; --ink:#1d2433; --navy:#141b2b; --muted:#6a6d78; --terra:#a4491f; --gold:#a98234; --gold-l:#d9b968;
+  --line:rgba(29,36,51,.15); --serif:'Cormorant Garamond','Cormorant',Georgia,serif; --sans:'Jost','Helvetica Neue',Arial,sans-serif; --hh:76px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:var(--hh)}
+body{background:var(--ivory);color:var(--ink);font-family:var(--sans);font-weight:400;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+:focus-visible{outline:2px solid var(--terra);outline-offset:3px}
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.08;letter-spacing:-.005em}
+em{font-style:italic}
+.wrap{width:min(1120px,100% - 48px);margin-inline:auto}
+section{padding:120px 0}
+.eyebrow{font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--terra);font-weight:500;display:block;margin-bottom:22px}
+h2{font-size:clamp(2.2rem,5vw,3.6rem)}
+.lede{color:var(--muted);font-size:1.06rem;max-width:520px;font-weight:300}
+.link{display:inline-flex;gap:10px;align-items:center;font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;font-weight:500;border-bottom:1px solid currentColor;padding-bottom:5px;transition:.25s}
+.link:hover{gap:16px;color:var(--terra)}
+.logo-img{width:100%;height:auto;filter:drop-shadow(0 1px 0 rgba(255,255,255,.4))}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 34px;font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;font-weight:500;transition:.3s;border:1px solid transparent}
+.btn-solid{background:var(--ink);color:var(--ivory)}
+.btn-solid:hover{background:var(--terra)}
+.btn-light{background:var(--ivory);color:var(--ink)}
+.btn-light:hover{background:#fff}
+.btn-ghost{border-color:rgba(255,255,255,.55);color:#fff}
+.btn-ghost:hover{background:rgba(255,255,255,.12);border-color:#fff}
+.ic{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;flex:none}
+
+/* header */
+header{position:fixed;inset:0 0 auto;z-index:100;height:var(--hh);color:#fff;transition:background .35s,color .35s,box-shadow .35s}
+header.solid,header.open{background:rgba(246,241,230,.94);backdrop-filter:blur(12px);color:var(--ink);box-shadow:0 1px 0 var(--line)}
+.nav{height:100%;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{font-family:var(--serif);font-size:1.7rem;font-weight:600;letter-spacing:.04em;line-height:1}
+.brand i{font-style:normal;color:var(--gold-l);transition:color .35s}
+header.solid .brand i,header.open .brand i{color:var(--terra)}
+.links{display:flex;align-items:center;gap:36px}
+.links a.l{font-size:.74rem;letter-spacing:.22em;text-transform:uppercase;font-weight:500;position:relative;padding:6px 0;opacity:.88;transition:.2s}
+.links a.l::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:0;background:currentColor;transition:.3s}
+.links a.l:hover,.links a.l.active{opacity:1}
+.links a.l:hover::after,.links a.l.active::after{width:100%}
+.nav-right{display:flex;align-items:center;gap:14px}
+.cart-btn{position:relative;width:44px;height:44px;display:grid;place-items:center}
+.cart-btn .ic{width:22px;height:22px}
+.cart-count{position:absolute;top:3px;right:2px;min-width:18px;height:18px;border-radius:9px;background:var(--terra);color:#fff;font-size:.66rem;font-weight:500;display:grid;place-items:center;padding:0 5px;transform:scale(0);transition:.2s}
+.cart-count.on{transform:scale(1)}
+.burger{display:none;width:44px;height:44px;place-items:center}
+.burger span,.burger span::before{display:block;width:24px;height:1.5px;background:currentColor;position:relative;transition:.3s}
+.burger span::before{content:"";position:absolute;left:0;top:7px}
+.burger span{top:-3.5px}
+.burger[aria-expanded=true] span{transform:translateY(3.5px) rotate(45deg);top:0}
+.burger[aria-expanded=true] span::before{transform:translateY(-7px) rotate(-90deg);top:7px}
+
+/* hero */
+.hero{min-height:100svh;display:grid;place-items:center;text-align:center;color:#fff;padding:140px 0 110px;position:relative;isolation:isolate;overflow:hidden;background:var(--navy)}
+.hero-bg{position:absolute;inset:0;z-index:-2;background:url(img/terrace.jpg) center/cover no-repeat;transform:scale(1.04);animation:drift 24s ease-out forwards}
+@keyframes drift{to{transform:scale(1.12)}}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(14,19,32,.72) 0%,rgba(14,19,32,.5) 40%,rgba(14,19,32,.82) 100%)}
+.hero .eyebrow{color:var(--gold-l);margin-bottom:28px}
+.hero h1{font-size:clamp(3rem,9vw,6.6rem);font-weight:500;margin-bottom:28px}
+.hero h1 em{color:var(--gold-l)}
+.hero p{max-width:560px;margin:0 auto 46px;font-weight:300;font-size:1.1rem;color:rgba(255,255,255,.88)}
+.hero-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.scroll{position:absolute;bottom:30px;left:50%;width:1px;height:54px;background:linear-gradient(var(--gold-l),transparent);animation:sc 2.2s infinite}
+@keyframes sc{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+/* story */
+.story-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:96px;align-items:center}
+.story-logo{max-width:400px;margin:auto}
+.story h2{margin-bottom:30px}
+.story h2 em{color:var(--terra)}
+.story p{color:#454a58;font-weight:300;font-size:1.1rem;margin-bottom:20px;max-width:540px}
+.story p.q{font-family:var(--serif);font-style:italic;font-size:1.55rem;line-height:1.4;color:var(--ink);font-weight:500;border-left:2px solid var(--gold);padding-left:24px;margin:34px 0}
+
+/* houses */
+.houses{background:var(--paper);border-block:1px solid var(--line)}
+.head-c{text-align:center;margin-bottom:76px}
+.head-c .eyebrow{margin-bottom:18px}
+.h3col{display:grid;grid-template-columns:repeat(3,1fr)}
+.house{text-align:center;padding:10px 40px 20px;display:flex;flex-direction:column;align-items:center;gap:20px}
+.house+.house{border-left:1px solid var(--line)}
+.house .logo-img{width:auto;height:230px;max-width:100%;object-fit:contain;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.house:hover .logo-img{transform:scale(1.06)}
+.house h3{font-size:1.9rem}
+.house p{color:var(--muted);font-weight:300;font-size:.98rem;max-width:290px;flex:1}
+
+/* utkal (dark) */
+.utkal{background:var(--navy);color:var(--ivory);padding:0}
+.utkal-grid{display:grid;grid-template-columns:1.05fr .95fr;align-items:stretch}
+.utkal-img{min-height:560px;background:url(img/staff.jpg) 40% center/cover}
+.utkal-txt{padding:110px clamp(32px,7vw,96px);display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:26px}
+.utkal .eyebrow{color:var(--gold-l);margin:0}
+.utkal h2 em{color:var(--gold-l)}
+.utkal p{color:rgba(246,241,230,.78);font-weight:300;font-size:1.08rem;max-width:440px}
+.utkal .link{color:var(--gold-l)}
+.utkal .link:hover{color:#fff}
+
+/* menu */
+.menu-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap;margin-bottom:56px}
+.tabs{display:flex;gap:34px;flex-wrap:wrap}
+.tab{font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;font-weight:500;color:var(--muted);padding:8px 0;border-bottom:1px solid transparent;transition:.2s}
+.tab:hover{color:var(--ink)}
+.tab.on{color:var(--ink);border-color:var(--terra)}
+.mlist{display:grid;grid-template-columns:1fr 1fr;gap:0 80px}
+.mrow{display:grid;grid-template-columns:1fr auto;gap:6px 20px;padding:30px 0;border-top:1px solid var(--line);align-items:start;animation:rise .5s both}
+@keyframes rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.mrow h3{font-size:1.65rem}
+.mrow .pr{font-family:var(--serif);font-size:1.5rem;font-weight:600;color:var(--terra);padding-top:2px}
+.mrow p{grid-column:1;color:var(--muted);font-weight:300;font-size:.96rem;max-width:380px}
+.mrow .act{grid-column:2;grid-row:2;justify-self:end;align-self:end}
+.add{width:40px;height:40px;border-radius:50%;border:1px solid var(--ink);display:grid;place-items:center;transition:.25s}
+.add:hover{background:var(--ink);color:var(--ivory)}
+.qty{display:flex;align-items:center;gap:4px;border:1px solid var(--ink);border-radius:999px;padding:2px}
+.qty button{width:34px;height:34px;border-radius:50%;font-size:1.1rem;line-height:1;display:grid;place-items:center}
+.qty button:hover{background:var(--ink);color:var(--ivory)}
+.qty span{min-width:20px;text-align:center;font-size:.9rem;font-weight:500}
+.menu-note{margin-top:42px;font-size:.85rem;color:var(--muted);font-weight:300;border-top:1px solid var(--line);padding-top:24px}
+
+
+/* story signboard */
+.story-wide{margin:100px 0 0}
+.story-wide img{width:100%;aspect-ratio:16/8;object-fit:cover;object-position:center 35%}
+.story-wide figcaption,.vfig figcaption{font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-top:16px;text-align:center}
+
+/* menu v3 */
+.menu-head{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:end;margin-bottom:56px}
+.menu-bar{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;border-bottom:1px solid var(--line)}
+.tabs{gap:30px}
+.tab{padding:14px 0;border-bottom:2px solid transparent;margin-bottom:-1px}
+.veg-toggle{display:flex;align-items:center;gap:12px;font-size:.78rem;letter-spacing:.06em;text-transform:none;color:var(--ink);font-weight:400;cursor:pointer;margin:0;padding:10px 0}
+.veg-toggle input{position:absolute;opacity:0;width:0;height:0;min-height:0}
+.sw{width:40px;height:22px;border-radius:11px;background:rgba(29,36,51,.22);position:relative;transition:.25s;flex:none}
+.sw::after{content:"";position:absolute;top:3px;left:3px;width:16px;height:16px;border-radius:50%;background:#fff;transition:.25s;box-shadow:0 1px 3px rgba(0,0,0,.3)}
+.veg-toggle input:checked+.sw{background:#1d7a46}
+.veg-toggle input:checked+.sw::after{transform:translateX(18px)}
+.veg-toggle input:focus-visible+.sw{outline:2px solid var(--terra);outline-offset:3px}
+.mintro{color:var(--muted);font-weight:300;margin:34px 0 8px;max-width:760px;min-height:1.7em}
+.mlist{margin-top:10px}
+.mlist .grp{grid-column:1/-1;font-family:var(--sans);font-size:.7rem;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);font-weight:500;margin:34px 0 -6px}
+.mrow h3{font-size:1.5rem;display:flex;align-items:baseline;gap:12px}
+.mrow .pr.tag{font-family:var(--sans);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;color:var(--gold);padding-top:8px;text-align:right}
+.mrow.noact .act{display:none}
+.dot{display:inline-grid;place-items:center;width:14px;height:14px;border:1.5px solid;border-radius:2px;flex:none;position:relative;top:1px;font-style:normal}
+.dot::after{content:"";width:6px;height:6px;border-radius:50%;background:currentColor}
+.dot.n{color:#a8281c}.dot.v{color:#1d7a46}
+.dot.vg{color:#0f766e}.dot.vg::after{content:"V";width:auto;height:auto;background:none;font-size:8px;font-weight:600;line-height:1;font-family:var(--sans)}
+.legend{display:flex;gap:28px;align-items:center;flex-wrap:wrap;margin-top:40px;font-size:.82rem;color:var(--muted)}
+.legend span{display:inline-flex;align-items:center;gap:9px}
+.legend .link{margin-left:auto;color:var(--ink)}
+.promises{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:80px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.promises>div{padding:34px 32px}
+.promises>div+div{border-left:1px solid var(--line)}
+.promises h4{font-family:var(--serif);font-size:1.5rem;font-weight:500;margin-bottom:8px}
+.promises p{color:var(--muted);font-weight:300;font-size:.94rem}
+
+/* takeaway */
+.takeaway{background:var(--paper);border-block:1px solid var(--line)}
+.take-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:90px;align-items:center}
+.takeaway h2,.visit h2{margin-bottom:24px}.takeaway h2 em,.visit h2 em{color:var(--terra)}
+.takeaway .facts{max-width:460px}
+.take-imgs{display:grid;grid-template-columns:.8fr 1.2fr;gap:18px;align-items:stretch}
+.take-imgs img{width:100%;height:100%;object-fit:cover;min-height:360px}
+
+/* visit */
+.visit{background:var(--navy);color:var(--ivory)}
+.visit .lede{color:rgba(246,241,230,.72)}
+.visit .eyebrow{color:var(--gold-l)}.visit h2 em{color:var(--gold-l)}
+.visit-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:90px;align-items:center}
+.dn{display:inline-flex;margin:34px 0 28px;border:1px solid rgba(246,241,230,.3);border-radius:999px;padding:4px}
+.dn button{padding:10px 26px;border-radius:999px;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;font-weight:500;color:rgba(246,241,230,.8);transition:.25s}
+.dn button.on{background:var(--ivory);color:var(--ink)}
+.vinfo{list-style:none;display:grid;gap:8px;color:rgba(246,241,230,.8);font-weight:300;font-size:.96rem}
+.vfig{position:relative;margin:0}
+.vfig img{width:100%;aspect-ratio:1/1;object-fit:cover;position:absolute;inset:0;opacity:0;transition:opacity .8s}
+.vfig img.on{opacity:1}
+.vfig::before{content:"";display:block;aspect-ratio:1/1}
+.vfig figcaption{position:absolute;left:0;right:0;bottom:-34px;color:rgba(246,241,230,.5)}
+.visit .vfig{margin-bottom:34px}
+
+/* banquet */
+.banquet{background:var(--paper);border-top:1px solid var(--line)}
+.bq-grid{display:grid;grid-template-columns:1fr 1fr;gap:90px;align-items:start}
+.bq-logo{width:min(280px,70%);margin-bottom:30px}
+.banquet h2{margin-bottom:24px}
+.banquet h2 em{color:var(--terra)}
+.facts{list-style:none;margin:36px 0 0;border-top:1px solid var(--line)}
+.facts li{display:flex;justify-content:space-between;padding:16px 0;border-bottom:1px solid var(--line);font-size:.95rem}
+.facts span{color:var(--muted);font-weight:300}
+.facts b{font-family:var(--serif);font-size:1.25rem;font-weight:600}
+.card{background:var(--ivory);border:1px solid var(--line);padding:clamp(28px,4vw,52px)}
+.card h3{font-size:1.9rem;margin-bottom:6px}
+.card .sub{color:var(--muted);font-weight:300;font-size:.95rem;margin-bottom:30px}
+
+/* forms */
+.fld{margin-bottom:24px;position:relative}
+label,.lbl{display:block;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);font-weight:500;margin-bottom:6px}
+input,select{width:100%;background:transparent;border:0;border-bottom:1px solid rgba(29,36,51,.35);color:var(--ink);font:inherit;font-size:1.02rem;padding:10px 0;min-height:46px;border-radius:0;transition:.25s;color-scheme:light}
+select{appearance:none;-webkit-appearance:none;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none' stroke='%231d2433' stroke-width='1.4'%3E%3Cpath d='M1 1.500l5 5 5-5'/%3E%3C/svg%3E") right 4px center no-repeat;padding-right:26px}
+input::placeholder{color:#a5a39d}
+input:focus,select:focus{outline:0;border-color:var(--terra)}
+.fld.err input,.fld.err select{border-color:#b3261e}
+.em{display:none;color:#b3261e;font-size:.78rem;margin-top:5px}
+.fld.err .em{display:block}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:0 28px}
+.seg{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
+.seg label{margin:0;text-transform:none;letter-spacing:0;font-size:.9rem;color:var(--ink);font-weight:400;cursor:pointer}
+.seg input{position:absolute;opacity:0;width:0;height:0;min-height:0}
+.seg span{display:inline-block;padding:10px 20px;border:1px solid rgba(29,36,51,.3);border-radius:999px;transition:.2s}
+.seg label:hover span{border-color:var(--ink)}
+.seg input:checked+span{background:var(--ink);color:var(--ivory);border-color:var(--ink)}
+.seg input:focus-visible+span{outline:2px solid var(--terra);outline-offset:3px}
+form .btn{width:100%;margin-top:10px}
+
+/* reserve */
+.reserve .wrap{max-width:720px}
+
+/* footer */
+footer{background:var(--navy);color:rgba(246,241,230,.75);padding:90px 0 32px;font-weight:300}
+.f-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:56px}
+footer .brand{color:var(--ivory);font-size:2rem;display:block;margin-bottom:16px}
+footer .brand i{color:var(--gold-l)}
+footer h4{font-size:.68rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-l);font-weight:500;margin-bottom:20px;font-family:var(--sans)}
+footer ul{list-style:none;display:grid;gap:8px;font-size:.93rem}
+footer li{display:flex;justify-content:space-between;gap:16px}
+footer a:hover{color:#fff}
+.copy{margin-top:70px;padding-top:26px;border-top:1px solid rgba(246,241,230,.14);display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:.8rem;color:rgba(246,241,230,.5)}
+.copy a{text-decoration:underline;cursor:pointer}
+
+/* cart */
+.scrim{position:fixed;inset:0;background:rgba(14,19,32,.5);z-index:200;opacity:0;pointer-events:none;transition:.3s}
+.scrim.on{opacity:1;pointer-events:auto}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(440px,100%);background:var(--ivory);z-index:210;transform:translateX(100%);transition:.4s cubic-bezier(.2,.8,.2,1);display:flex;flex-direction:column;box-shadow:-20px 0 60px rgba(0,0,0,.15)}
+.drawer.on{transform:none}
+.dr-h{display:flex;justify-content:space-between;align-items:center;padding:26px 30px;border-bottom:1px solid var(--line)}
+.dr-h h3{font-size:1.7rem}
+.dr-h button{width:40px;height:40px;display:grid;place-items:center}
+.dr-b{flex:1;overflow:auto;padding:10px 30px}
+.empty{text-align:center;color:var(--muted);padding:80px 10px;font-family:var(--serif);font-size:1.4rem;font-style:italic}
+.ci{display:grid;grid-template-columns:1fr auto;gap:6px 16px;align-items:center;padding:20px 0;border-bottom:1px solid var(--line)}
+.ci h4{font-family:var(--serif);font-size:1.25rem;font-weight:500}
+.ci small{color:var(--terra);font-weight:500;font-size:.9rem}
+.dr-f{padding:24px 30px 30px;border-top:1px solid var(--line);background:var(--paper)}
+.tot{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:18px}
+.tot span:first-child{font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;font-weight:500}
+.tot span:last-child{font-family:var(--serif);font-size:1.9rem;font-weight:600;color:var(--terra)}
+.dr-f .fld{margin-bottom:12px}
+.dr-f input{min-height:42px;padding:8px 0}
+
+/* modal + toast */
+.modal{position:fixed;inset:0;z-index:400;display:none;place-items:center;padding:20px;background:rgba(14,19,32,.62)}
+.modal.on{display:grid;animation:fade .25s}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+.mbox{background:var(--ivory);padding:52px 40px 40px;max-width:460px;width:100%;text-align:center;max-height:90vh;overflow:auto}
+.mbox .ok{width:56px;height:56px;border-radius:50%;border:1px solid var(--terra);color:var(--terra);margin:0 auto 22px;display:grid;place-items:center}
+.mbox .ok .ic{width:24px;height:24px;stroke-width:1.8}
+.mbox h3{font-size:2rem;margin-bottom:14px}
+.mbox p{color:var(--muted);font-weight:300;margin-bottom:6px}
+.mbox p b{color:var(--ink);font-weight:500}
+.mbox .ref{display:inline-block;font-family:ui-monospace,Menlo,monospace;border:1px solid var(--line);padding:6px 16px;color:var(--terra);margin:14px 0 24px;letter-spacing:.12em;font-size:.88rem}
+.mbox .btn{width:100%;margin-top:10px}
+.mbox .btn-line{border:1px solid var(--ink);color:var(--ink)}
+.mbox .btn-line:hover{background:var(--ink);color:var(--ivory)}
+.toast{position:fixed;left:50%;top:calc(var(--hh) + 14px);transform:translate(-50%,-160px);background:var(--ink);color:var(--ivory);padding:13px 26px;font-size:.82rem;letter-spacing:.08em;z-index:500;transition:.4s;max-width:90vw;text-align:center}
+.toast.on{transform:translate(-50%,0)}
+table{width:100%;border-collapse:collapse;font-size:.8rem;text-align:left}
+th,td{padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:.64rem;letter-spacing:.18em;text-transform:uppercase;color:var(--terra)}
+
+.rv{opacity:0;transform:translateY(26px);transition:opacity .9s,transform .9s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}html{scroll-behavior:auto}}
+
+@media (max-width:980px){
+  section{padding:88px 0}
+  .links{position:fixed;top:var(--hh);left:0;right:0;height:calc(100svh - var(--hh));flex-direction:column;justify-content:center;gap:26px;background:var(--ivory);color:var(--ink);transform:translateY(-8px);opacity:0;visibility:hidden;transition:.35s}
+  .links.on{opacity:1;visibility:visible;transform:none}
+  .links a.l{font-family:var(--serif);font-size:2rem;letter-spacing:0;text-transform:none;font-weight:500}
+  .links .btn{margin-top:10px}
+  .burger{display:grid}
+  .story-grid,.bq-grid{grid-template-columns:1fr;gap:56px}
+  .story-logo{max-width:300px}
+  .h3col{grid-template-columns:1fr;gap:56px}
+  .house+.house{border-left:0;border-top:1px solid var(--line);padding-top:56px}
+  .utkal-grid{grid-template-columns:1fr}
+  .utkal-img{min-height:380px}
+  .utkal-txt{padding:70px 28px}
+  .mlist{grid-template-columns:1fr}
+  .menu-head{grid-template-columns:1fr;gap:20px}
+  .take-grid,.visit-grid{grid-template-columns:1fr;gap:56px}
+  .promises{grid-template-columns:1fr}
+  .promises>div+div{border-left:0;border-top:1px solid var(--line)}
+  .promises>div{padding:28px 4px}
+  .story-wide{margin-top:70px}
+  .legend .link{margin-left:0}
+  .f-grid{grid-template-columns:1fr 1fr;gap:44px}
+}
+@media (max-width:600px){
+  .wrap{width:min(1120px,100% - 40px)}
+  .row2{grid-template-columns:1fr}
+  .f-grid{grid-template-columns:1fr}
+  .hero-cta .btn{width:100%}
+  .tabs{gap:6px 22px}
+  .take-imgs{grid-template-columns:1fr 1fr}.take-imgs img{min-height:240px}
+  .story-wide img{aspect-ratio:4/3}
+  .promises>div{padding:24px 0}
+  .brand{font-size:1.45rem}
+  .mbox{padding:44px 24px 30px}
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h16M14 6l6 6-6 6"/></symbol>
+<symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+<symbol id="i-bag" viewBox="0 0 24 24"><path d="M5 8h14l-1 12H6zM9 8V6a3 3 0 016 0v2"/></symbol>
+<symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.500l4.500 4.500L19 7.500"/></symbol>
+</defs></svg>
+
+<header id="hdr">
+  <div class="wrap nav">
+    <a href="#home" class="brand" aria-label="TriStar 1947">TriStar <i>1947</i></a>
+    <div class="nav-right">
+      <nav class="links" id="links" aria-label="Primary">
+        <a class="l" href="#story">Our Story</a>
+        <a class="l" href="#houses">The Houses</a>
+        <a class="l" href="#menu">Menu</a>
+        <a class="l" href="#visit">Visit</a>
+        <a class="l" href="#banquet">Banquet</a>
+        <a class="btn btn-solid" href="#reserve">Reserve</a>
+      </nav>
+      <button class="cart-btn" id="cartBtn" aria-label="Open your order"><svg class="ic"><use href="#i-bag"/></svg><span class="cart-count" id="cartCount">0</span></button>
+      <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="hero-bg" role="img" aria-label="Rooftop terrace dining at Utkal Biryani House"></div>
+  <div class="wrap">
+    <span class="eyebrow">Since 1947 · Odisha</span>
+    <h1>Three houses.<br><em>One Odia table.</em></h1>
+    <p>Utkal Biryani House, The Kalinga Kitchen and Chilika Banquet — heritage cooking and celebration, together.</p>
+    <div class="hero-cta">
+      <a class="btn btn-light" href="#reserve">Reserve a Table</a>
+      <a class="btn btn-ghost" href="#banquet">Banquet Enquiry</a>
+    </div>
+  </div>
+  <span class="scroll" aria-hidden="true"></span>
+</section>
+
+<section class="story" id="story">
+  <div class="wrap story-grid">
+    <div class="rv story-logo"><img class="logo-img" src="img/logo-kalinga.png" alt="The Kalinga Kitchen — Authentic Odia Rasoi, since forever"></div>
+    <div class="rv">
+      <span class="eyebrow">The Kalinga Kitchen</span>
+      <h2>It began with <em>Smt. Anuri.</em></h2>
+      <p class="q">The recipe has been carried down in our family from my great-grandmother.</p>
+      <p>Every dish at The Kalinga Kitchen follows the cooking she handed down — the spice blends, the slow pots, the Odia rasoi as it was meant to be eaten. We have kept it that way, and opened our doors so you can taste it.</p>
+    </div>
+  </div>
+  <div class="wrap">
+    <figure class="story-wide rv"><img src="img/signboard.jpg" alt="The Kalinga Kitchen signboard — Authentic Odia and Kalinga cuisine, Est. 1947" loading="lazy"><figcaption>The Kalinga Kitchen · Authentic Odia &amp; Kalinga cuisine · Est. 1947</figcaption></figure>
+  </div>
+</section>
+
+<section class="houses" id="houses">
+  <div class="wrap">
+    <div class="head-c rv"><span class="eyebrow">The Houses</span><h2>Three ways to <em>gather.</em></h2></div>
+    <div class="h3col">
+      <article class="house rv"><img class="logo-img" src="img/logo-utkal.png" alt="Utkal Biryani House" loading="lazy">
+        <h3>Utkal Biryani House</h3><p>Matka biryani, dum-cooked with Utkal spices and basmati.</p><a class="link" href="#menu" data-filter="biryani">View menu <svg class="ic"><use href="#i-arrow"/></svg></a></article>
+      <article class="house rv"><img class="logo-img" src="img/logo-kalinga.png" alt="The Kalinga Kitchen" loading="lazy">
+        <h3>The Kalinga Kitchen</h3><p>Authentic Odia rasoi — thalis, podas and singada, from her recipes.</p><a class="link" href="#menu" data-filter="thalis">View menu <svg class="ic"><use href="#i-arrow"/></svg></a></article>
+      <article class="house rv"><img class="logo-img" src="img/logo-chilika.png" alt="Chilika Banquet" loading="lazy">
+        <h3>Chilika Banquet</h3><p>An open terrace for weddings, receptions and celebrations.</p><a class="link" href="#banquet">Plan an event <svg class="ic"><use href="#i-arrow"/></svg></a></article>
+    </div>
+  </div>
+</section>
+
+<section class="utkal">
+  <div class="utkal-grid">
+    <div class="utkal-img" role="img" aria-label="Utkal Biryani House team in Odia handloom attire"></div>
+    <div class="utkal-txt rv">
+      <span class="eyebrow">Utkal Biryani House</span>
+      <h2>Biryani, the <em>matka</em> way.</h2>
+      <p>Sealed in earthen pots and cooked low and slow, so every grain carries the spice, the ghee and the smoke.</p>
+      <a class="link" href="#menu" data-filter="biryani">Explore the menu <svg class="ic"><use href="#i-arrow"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<section id="menu">
+  <div class="wrap">
+    <div class="menu-head rv">
+      <div><span class="eyebrow">The Menu</span><h2>From our <em>heritage table.</em></h2></div>
+      <p class="lede">We preserve the culinary lineage of Odisha — slow-roasted podas wrapped in leaves, crisp singadas, handi cooking and fragrant rice, all made with traditional techniques and local spices.</p>
+    </div>
+    <div class="menu-bar rv">
+      <div class="tabs" id="tabs" role="tablist"></div>
+      <label class="veg-toggle"><input type="checkbox" id="vegOnly"><span class="sw"></span>Vegetarian only</label>
+    </div>
+    <p class="mintro" id="mintro"></p>
+    <div class="mlist" id="mlist"></div>
+    <div class="legend"><span><i class="dot n"></i>Non-vegetarian</span><span><i class="dot v"></i>Vegetarian</span><span><i class="dot vg"></i>Vegan</span><a class="link" href="1947-menu-booklet.pdf" target="_blank" rel="noopener">Download menu (PDF)</a></div>
+
+    <div class="promises rv">
+      <div><h4>Complimentary Chhena Poda</h4><p>Every guest receives a 100g serving of fresh Chhena Poda. Premium takeaway packs are available.</p></div>
+      <div><h4>Fresh coconut water</h4><p>Your first serving is on us; further servings are ₹200 each.</p></div>
+      <div><h4>Water, on the house</h4><p>Chilled water is complimentary, and warm or hot water is always available on request.</p></div>
+    </div>
+    <p class="menu-note">All non-vegetarian items are sourced fresh daily and prepared under strict hygiene standards. Slow-roasted poda items need preparation time, so please order in advance. We use no artificial colourings or commercial flavour enhancers. Taxes extra as applicable. Prices in ₹.</p>
+  </div>
+</section>
+
+<section class="takeaway" id="takeaway">
+  <div class="wrap take-grid">
+    <div class="rv">
+      <span class="eyebrow">Takeaway</span>
+      <h2>Packed with <em>care.</em></h2>
+      <p class="lede">Thalis and biryani, freshly prepared and hygienically packed in sustainable packaging — so the table can follow you home.</p>
+      <ul class="facts"><li><span>Chhena Poda to take home</span><b>₹1,000 / kg</b></li><li><span>Packaging</span><b>Leak-proof, sustainable</b></li></ul>
+      <a class="link" href="#menu" style="margin-top:34px">See the menu <svg class="ic"><use href="#i-arrow"/></svg></a>
+    </div>
+    <div class="take-imgs rv">
+      <img src="img/packaging-box.jpg" alt="Utkal Biryani House thali box" loading="lazy">
+      <img src="img/packaging-bag.jpg" alt="Utkal Biryani House jute takeaway bag" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<section class="visit" id="visit">
+  <div class="wrap visit-grid">
+    <div class="rv">
+      <span class="eyebrow">Visit</span>
+      <h2>Find us <em>under one roof.</em></h2>
+      <p class="lede">Utkal Biryani House and The Kalinga Kitchen, together at TriStar 1947 — by day and into the evening.</p>
+      <div class="dn" id="dn" role="tablist" aria-label="Time of day"><button class="on" data-v="night">Evening</button><button data-v="day">Day</button></div>
+      <ul class="vinfo"><li>TriStar 1947 Complex, Cuttack – Puri Road, Odisha</li><li>Mon – Thu 11:30 – 22:30 · Fri – Sun 11:00 – 23:00</li></ul>
+    </div>
+    <figure class="vfig rv"><img id="vDay" src="img/building-day.jpg" alt="TriStar 1947 building by day" loading="lazy"><img id="vNight" class="on" src="img/building-night.jpg" alt="TriStar 1947 building in the evening" loading="lazy"><figcaption>Architectural impression</figcaption></figure>
+  </div>
+</section>
+
+<section class="banquet" id="banquet">
+  <div class="wrap bq-grid">
+    <div class="rv">
+      <img class="logo-img bq-logo" src="img/logo-chilika.png" alt="Chilika Banquet — Celebrate with Odia grace" loading="lazy">
+      <span class="eyebrow">Chilika Banquet</span>
+      <h2>Celebrate with <em>Odia grace.</em></h2>
+      <p class="lede">An open-air terrace with a Konark wheel backdrop, gazebo seating and ambient light — with in-house Odia and Mughlai catering.</p>
+      <ul class="facts">
+        <li><span>Capacity</span><b>Up to 600 guests</b></li>
+        <li><span>Setting</span><b>Open terrace &amp; indoor</b></li>
+        <li><span>Catering</span><b>Live cooking counters</b></li>
+        <li><span>Arrival</span><b>Valet parking</b></li>
+      </ul>
+    </div>
+    <form class="card rv" id="bqForm" novalidate>
+      <h3>Enquire about your event</h3><p class="sub">Tell us a little — we'll call you with availability and a quote.</p>
+      <div class="fld"><label for="bq-name">Full name</label><input id="bq-name" name="name" placeholder="e.g. Ramesh Mohanty" autocomplete="name"><div class="em">Please enter your name.</div></div>
+      <div class="fld"><label for="bq-phone">Phone</label><input id="bq-phone" name="phone" type="tel" inputmode="tel" placeholder="+91 98765 43210" autocomplete="tel"><div class="em">Enter a valid 10-digit number.</div></div>
+      <div class="fld"><label for="bq-type">Event</label><select id="bq-type" name="type"><option>Wedding Reception</option><option>Wedding Ceremony</option><option>Engagement / Roka</option><option>Birthday</option><option>Anniversary</option><option>Corporate Event</option><option>Other</option></select></div>
+      <div class="row2">
+        <div class="fld"><label for="bq-date">Date</label><input id="bq-date" name="date" type="date"><div class="em">Choose a future date.</div></div>
+        <div class="fld"><label for="bq-guests">Guests</label><input id="bq-guests" name="guests" type="number" min="10" max="600" inputmode="numeric" placeholder="e.g. 250"><div class="em">Between 10 and 600.</div></div>
+      </div>
+      <button class="btn btn-solid" type="submit">Send enquiry</button>
+    </form>
+  </div>
+</section>
+
+<section class="reserve" id="reserve">
+  <div class="wrap">
+    <div class="head-c rv"><span class="eyebrow">Reservations</span><h2>Reserve a <em>table.</em></h2></div>
+    <form class="card rv" id="rsvForm" novalidate>
+      <div class="row2">
+        <div class="fld"><label for="r-name">Name</label><input id="r-name" name="name" placeholder="Your name" autocomplete="name"><div class="em">Please enter your name.</div></div>
+        <div class="fld"><label for="r-phone">Phone</label><input id="r-phone" name="phone" type="tel" inputmode="tel" placeholder="+91 91234 56789" autocomplete="tel"><div class="em">Enter a valid 10-digit number.</div></div>
+      </div>
+      <div class="row2">
+        <div class="fld"><label for="r-date">Date</label><input id="r-date" name="date" type="date"><div class="em">Choose today or later.</div></div>
+        <div class="fld"><label for="r-time">Time</label><select id="r-time" name="time"><option>12:30 PM (Lunch)</option><option>01:30 PM (Lunch)</option><option>02:30 PM (Lunch)</option><option>07:00 PM (Dinner)</option><option>08:00 PM (Dinner)</option><option>09:00 PM (Dinner)</option><option>10:00 PM (Late Dinner)</option></select></div>
+      </div>
+      <div class="fld"><label for="r-guests">Guests</label><select id="r-guests" name="guests"><option>1 Guest</option><option selected>2 Guests</option><option>3 Guests</option><option>4 Guests</option><option>5 Guests</option><option>6 Guests</option><option>7 Guests</option><option>8 Guests</option><option>9–15 Guests</option></select></div>
+      <div class="fld"><span class="lbl">Seating</span>
+        <div class="seg">
+          <label><input type="radio" name="seat" value="Utkal Biryani House" checked><span>Utkal Biryani House</span></label>
+          <label><input type="radio" name="seat" value="The Kalinga Kitchen"><span>The Kalinga Kitchen</span></label>
+          <label><input type="radio" name="seat" value="Open Terrace"><span>Open Terrace</span></label>
+        </div></div>
+      <button class="btn btn-solid" type="submit">Confirm reservation</button>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="f-grid">
+      <div><span class="brand">TriStar <i>1947</i></span><p>Utkal Biryani House, The Kalinga Kitchen and Chilika Banquet — the culinary soul of Odisha.</p></div>
+      <div><h4>Hours</h4><ul><li><span>Mon – Thu</span><span>11:30 – 22:30</span></li><li><span>Fri – Sun</span><span>11:00 – 23:00</span></li><li style="color:var(--gold-l);font-size:.85rem">Open terrace every evening</li></ul></div>
+      <div><h4>Visit</h4><ul><li>TriStar 1947 Complex, Cuttack – Puri Road, Odisha</li><li><a href="tel:+919876543210">+91 98765 43210</a></li><li><a href="mailto:info@tristar1947.com">info@tristar1947.com</a></li></ul></div>
+      <div><h4>Explore</h4><ul><li><a href="#story">Our Story</a></li><li><a href="#menu">Menu</a></li><li><a href="#banquet">Banquet</a></li><li><a href="#reserve">Reservations</a></li></ul></div>
+    </div>
+    <div class="copy"><span>© 2026 TriStar 1947 · Tristar Foods LLP. All rights reserved.</span><a id="adminLink">Staff inbox</a></div>
+  </div>
+</footer>
+
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-label="Your order" aria-hidden="true">
+  <div class="dr-h"><h3>Your order</h3><button id="drClose" aria-label="Close"><svg class="ic"><use href="#i-x"/></svg></button></div>
+  <div class="dr-b" id="cartBody"></div>
+  <div class="dr-f" id="cartFoot" hidden>
+    <div class="tot"><span>Total</span><span id="cartTotal">₹0</span></div>
+    <form id="ordForm" novalidate>
+      <div class="fld"><input name="name" placeholder="Your name" aria-label="Your name"><div class="em">Enter your name.</div></div>
+      <div class="fld"><input name="phone" type="tel" inputmode="tel" placeholder="Phone number" aria-label="Phone number"><div class="em">Enter a valid 10-digit number.</div></div>
+      <button class="btn btn-solid" type="submit">Place order</button>
+    </form>
+  </div>
+</aside>
+<div class="modal" id="modal"><div class="mbox" id="mbox"></div></div>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+(()=>{
+const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
+const store={get(k,d){try{return JSON.parse(localStorage.getItem(k))??d}catch{return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch{}}};
+const rupee=n=>'₹'+n.toLocaleString('en-IN');
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const ICON=n=>`<svg class="ic"><use href="#i-${n}"/></svg>`;
+
+const D={n:'Non-vegetarian',v:'Vegetarian',vg:'Vegan'};
+const CATS=[
+ {id:'thalis',name:'Thalis',intro:'Served with authentic accompaniments, scented rice, signature dal and traditional local side dishes.'},
+ {id:'pulao',name:'Pulao',intro:'Fragrant aromatic rice infused with traditional spices, pure ghee and rich fresh ingredients.'},
+ {id:'biryani',name:'Biryani',intro:'Layered Utkal-style biryanis, dum-cooked to perfection with signature spice blends.'},
+ {id:'podas',name:'Podas',intro:'Burnt and slow-roasted specialties, infused with natural wood smoke and spice marinades. These need preparation time — kindly order in advance.'},
+ {id:'singada',name:'Singada',intro:'Crispy golden triangular pastries with spiced fillings, served with fresh mint and tamarind chutney. Hand-crafted daily with unrefined cold-pressed oils and local whole spices.'},
+ {id:'sweets',name:'Misanna',intro:'Sweets from the Odia table.'},
+ {id:'drinks',name:'Beverages',intro:'Beverages and hydration.'}
+];
+let _id=100;const I=(cat,name,price,d,desc,extra={})=>({id:++_id,cat,name,price,d,desc,...extra});
+const MENU=[
+ I('thalis','Mutton Thali',400,'n','Slow-cooked tender mutton curry served with aromatic rice, dal and authentic sides.'),
+ I('thalis','Desi Chicken Thali',350,'n','Country chicken prepared in traditional spices, served with a complete meal spread.'),
+ I('thalis','Chicken Thali (Normal)',300,'n','Classic home-style chicken curry served with steamed rice, dal and seasonal sides.'),
+ I('thalis','Machha Thali (Fish Thali)',250,'n','Fresh river fish cooked in mustard gravy, served with a complete traditional meal platter.'),
+ I('thalis','Egg Thali',200,'n','Spiced egg curry served with steamed rice, dal, bhaja and authentic condiments.'),
+ I('thalis','Veg Thali',200,'v','Pure vegetarian platter featuring dalma, ghanta, steamed rice and authentic bhaja.'),
+ I('thalis','Vegan Thali',200,'vg','100% plant-based meal cooked without ghee or dairy products.'),
+ I('pulao','Mutton Pulao',500,'n','Succulent mutton pieces tossed with ghee-infused fragrant long-grain rice.'),
+ I('pulao','Desi Chicken Pulao',400,'n','Rich country chicken flavours embedded into spiced aromatic rice.'),
+ I('pulao','Chicken Pulao (Normal)',300,'n','Classic chicken pulao prepared with delicate Odia spice blends.'),
+ I('pulao','Vegan Pulao',250,'vg','Fragrant rice cooked with garden-fresh vegetables and cold-pressed oil.'),
+ I('pulao','Paneer Pulao',250,'v','Fresh cottage cheese cubes tossed with fragrant spiced rice.'),
+ I('biryani','Mutton Biryani',350,'n','Tender mutton dum-cooked with long-grain rice and secret heritage spices.'),
+ I('biryani','Desi Chicken Biryani',300,'n','Country chicken dum biryani infused with natural herbs and aromatic ghee.'),
+ I('biryani','Chicken Biryani (Normal)',50,'n','Delicious Utkal-style chicken biryani cooked with fragrant herbs.'),
+ I('biryani','Prawn Biryani',200,'n','Coastal fresh prawns layered with aromatic spiced biryani rice.'),
+ I('biryani','Mushroom Biryani',200,'v','Fresh straw mushrooms slow-cooked with aromatic biryani spices.'),
+ I('biryani','Vegan Biryani',200,'vg','Made with fresh tofu, aromatic herbs and premium long-grain rice.'),
+ I('biryani','Paneer Biryani',200,'v','Soft marinated paneer cubes layered with fragrant spices and long-grain rice.'),
+ I('podas','Chicken Baus Poda / Mutton Baus Poda',null,'n','Slow-roasted inside green bamboo stalks over wood embers.',{tag:'On order',group:'Bamboo & earthen pot — Baus Poda & Handi'}),
+ I('podas','Desi Chicken Baus Poda',null,'n','Country chicken marinated in raw spices, roasted in hollow bamboo.',{tag:'On order'}),
+ I('podas','Handi Chicken / Handi Desi Chicken / Handi Mutton',null,'n','Slow-simmered in sealed clay pots with whole traditional spices.',{tag:'On order'}),
+ I('podas','Desi Chicken Patra Poda / Mutton Patra Poda',null,'n','Wrapped in banana or sal leaf with mustard-garlic paste and roasted over embers.',{tag:'On order',group:'Leaf-wrapped — Patra Poda'}),
+ I('podas','Mushroom Patra Poda / Paneer Patra Poda',null,'v','Fresh mushrooms or cottage cheese wrapped in leaves and fire-roasted.',{tag:'On order'}),
+ I('podas','Tofu Patra Poda',null,'vg','Plant-based fresh tofu marinated in mustard-herb paste and leaf-roasted.',{tag:'On order'}),
+ I('singada','Aaloo Singada (Classic)',30,'v','Traditional Odia pastry filled with spiced potato, peanuts and roasted cumin-chilli spices.'),
+ I('singada','Chicken Singada',60,'n','Golden crisp pastry stuffed with minced spiced chicken and roasted garlic herbs.'),
+ I('singada','Mutton Keema Singada',80,'n','Flaky crust stuffed with slow-cooked spiced mutton keema.'),
+ I('singada','Paneer Singada',50,'v','Crispy fried crust loaded with spiced cottage cheese and green peas.'),
+ I('singada','Mushroom Singada',50,'v','Local paddy-straw mushrooms tossed with mustard and Odia spices in a crispy shell.'),
+ I('singada','Tofu Singada (Vegan)',50,'vg','Fresh tofu cubes seasoned with native roasted herbs in a light crispy pastry.'),
+ I('sweets','Chhena Poda',null,'v','Complimentary 100g serving per guest. Additional takeaway at ₹1,000 / kg in premium leak-proof packaging.',{tag:'Complimentary*'}),
+ I('sweets','Pahala Rasgulla',null,'v','Traditional caramel-tinted soft rasgullas prepared in authentic Pahala style.',{tag:'Market price'}),
+ I('drinks','Fresh Coconut Water',null,'vg','First serving complimentary per guest; further servings at ₹200 each.',{tag:'1st free · ₹200'}),
+ I('drinks','Chilled Water',null,'vg','Fresh chilled drinking water, served on the house.',{tag:'Complimentary'}),
+ I('drinks','Hot Water',null,'vg','Warm or hot drinking water, on request.',{tag:'Complimentary'}),
+ I('drinks','Packaged Drinking Water',null,'vg','Sourced from trusted independent producers.',{tag:'MRP'})
+];
+let cat='thalis',vegOnly=false,cart=store.get('ts3_cart',{});
+const list=$('#mlist');
+$('#tabs').innerHTML=CATS.map(c=>`<button class="tab${c.id===cat?' on':''}" role="tab" data-cat="${c.id}">${c.name}</button>`).join('');
+function renderMenu(){
+  const c=CATS.find(x=>x.id===cat);$('#mintro').textContent=c.intro;
+  let last='';
+  list.innerHTML=MENU.filter(m=>m.cat===cat&&(!vegOnly||m.d!=='n')).map((m,i)=>{const q=cart[m.id]||0;
+    const g=m.group&&m.group!==last?(last=m.group,`<h4 class="grp">${esc(m.group)}</h4>`):(m.group?'':'');
+    const price=m.price!=null?rupee(m.price):esc(m.tag);
+    return g+`<article class="mrow${m.price==null?' noact':''}" style="animation-delay:${i*40}ms" data-id="${m.id}"><h3><i class="dot ${m.d}" role="img" aria-label="${D[m.d]}"></i>${esc(m.name)}</h3><span class="pr${m.price==null?' tag':''}">${price}</span><p>${esc(m.desc)}</p>
+    <div class="act">${m.price==null?'':q?`<div class="qty"><button data-act="dec" aria-label="Remove one">−</button><span>${q}</span><button data-act="inc" aria-label="Add one">+</button></div>`:`<button class="add" data-act="add" aria-label="Add ${esc(m.name)} to order">${ICON('plus')}</button>`}</div></article>`}).join('')||'<p style="grid-column:1/-1;padding:40px 0;color:var(--muted)">No vegetarian items in this section — please see the other sections.</p>';
+}
+function setCat(c){if(c==='rasoi')c='thalis';cat=c;$$('#tabs .tab').forEach(b=>b.classList.toggle('on',b.dataset.cat===c));renderMenu()}
+$('#tabs').addEventListener('click',e=>{const b=e.target.closest('.tab');if(b)setCat(b.dataset.cat)});
+$('#vegOnly').addEventListener('change',e=>{vegOnly=e.target.checked;renderMenu()});
+const dn=$('#dn');dn.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;$$('button',dn).forEach(x=>x.classList.toggle('on',x===b));$('#vNight').classList.toggle('on',b.dataset.v==='night');$('#vDay').classList.toggle('on',b.dataset.v==='day')});
+$$('[data-filter]').forEach(a=>a.addEventListener('click',()=>setCat(a.dataset.filter)));
+list.addEventListener('click',e=>{const b=e.target.closest('[data-act]');if(!b)return;const id=b.closest('.mrow').dataset.id;
+  if(b.dataset.act==='add'){cart[id]=1;toast('Added to your order')}
+  if(b.dataset.act==='inc')cart[id]++;
+  if(b.dataset.act==='dec'){cart[id]--;if(cart[id]<=0)delete cart[id]}
+  saveCart();renderMenu()});
+
+const drawer=$('#drawer'),scrim=$('#scrim');
+function saveCart(){store.set('ts3_cart',cart);renderCart()}
+function renderCart(){
+  const ids=Object.keys(cart).filter(id=>MENU.some(m=>m.id==id)),n=ids.reduce((a,k)=>a+cart[k],0);
+  const cc=$('#cartCount');cc.textContent=n;cc.classList.toggle('on',n>0);
+  const body=$('#cartBody'),foot=$('#cartFoot');
+  if(!ids.length){body.innerHTML='<div class="empty">Your order is empty.</div>';foot.hidden=true;return}
+  let t=0;body.innerHTML=ids.map(id=>{const m=MENU.find(x=>x.id==id),q=cart[id];t+=m.price*q;
+    return `<div class="ci" data-id="${id}"><h4>${esc(m.name)}</h4><div class="qty"><button data-act="dec" aria-label="Remove one">−</button><span>${q}</span><button data-act="inc" aria-label="Add one">+</button></div><small>${rupee(m.price*q)}</small></div>`}).join('');
+  $('#cartTotal').textContent=rupee(t);foot.hidden=false;
+}
+$('#cartBody').addEventListener('click',e=>{const b=e.target.closest('[data-act]');if(!b)return;const id=b.closest('.ci').dataset.id;
+  if(b.dataset.act==='inc')cart[id]++;else{cart[id]--;if(cart[id]<=0)delete cart[id]}saveCart();renderMenu()});
+function openCart(o=true){drawer.classList.toggle('on',o);scrim.classList.toggle('on',o);drawer.setAttribute('aria-hidden',!o);document.body.style.overflow=o?'hidden':''}
+$('#cartBtn').onclick=()=>openCart();$('#drClose').onclick=()=>openCart(false);scrim.onclick=()=>openCart(false);
+
+const phoneOk=v=>{const d=v.replace(/\D/g,'');return d.length===10||(d.length===12&&d.startsWith('91'))||(d.length===11&&d.startsWith('0'))};
+const todayStr=()=>{const d=new Date();d.setMinutes(d.getMinutes()-d.getTimezoneOffset());return d.toISOString().slice(0,10)};
+const flag=(i,ok)=>{i.closest('.fld').classList.toggle('err',!ok);return ok};
+const wire=f=>$$('input,select',f).forEach(i=>i.addEventListener('input',()=>i.closest('.fld')?.classList.remove('err')));
+$('#bq-date').min=todayStr();$('#r-date').min=todayStr();$('#r-date').value=todayStr();
+
+function save(kind,data){const all=store.get('ts2_inbox',[]);const ref=kind.slice(0,3).toUpperCase()+'-'+Date.now().toString(36).toUpperCase().slice(-6);all.unshift({ref,kind,at:new Date().toISOString(),...data});store.set('ts2_inbox',all);return ref}
+const modal=$('#modal');
+function showModal(h,wide){$('#mbox').innerHTML=h;$('#mbox').style.maxWidth=wide?'980px':'';modal.classList.add('on')}
+modal.addEventListener('click',e=>{if(e.target===modal||e.target.closest('[data-close]'))modal.classList.remove('on')});
+const WA='919876543210';
+function confirmBox(title,lines,ref,wa){showModal(`<div class="ok">${ICON('check')}</div><h3>${esc(title)}</h3>${lines.map(l=>`<p>${l}</p>`).join('')}<div class="ref">${esc(ref)}</div><p style="font-size:.85rem">Our team will call to confirm.</p>
+ <a class="btn btn-solid" target="_blank" rel="noopener" href="https://wa.me/${WA}?text=${encodeURIComponent(wa)}">Confirm on WhatsApp</a><button class="btn btn-line" data-close>Close</button>`)}
+
+const bq=$('#bqForm');wire(bq);
+bq.addEventListener('submit',e=>{e.preventDefault();const f=bq.elements;let ok=true;
+  ok=flag(f.name,f.name.value.trim().length>1)&ok;ok=flag(f.phone,phoneOk(f.phone.value))&ok;
+  ok=flag(f.date,f.date.value&&f.date.value>=todayStr())&ok;const g=+f.guests.value;ok=flag(f.guests,g>=10&&g<=600)&ok;
+  if(!ok){bq.querySelector('.err input')?.focus();return}
+  const d={name:f.name.value.trim(),phone:f.phone.value.trim(),type:f.type.value,date:f.date.value,guests:g},ref=save('banquet',d);
+  confirmBox('Enquiry received',[`Thank you, <b>${esc(d.name)}</b>.`,`${esc(d.type)} · ${d.guests} guests · ${esc(d.date)}`],ref,`Hello TriStar 1947, banquet enquiry (${ref}): ${d.type}, ${d.guests} guests on ${d.date}. Name: ${d.name}, Phone: ${d.phone}`);bq.reset()});
+
+const rs=$('#rsvForm');wire(rs);
+rs.addEventListener('submit',e=>{e.preventDefault();const f=rs.elements;let ok=true;
+  ok=flag(f.name,f.name.value.trim().length>1)&ok;ok=flag(f.phone,phoneOk(f.phone.value))&ok;ok=flag(f.date,f.date.value&&f.date.value>=todayStr())&ok;
+  if(!ok){rs.querySelector('.err input')?.focus();return}
+  const d={name:f.name.value.trim(),phone:f.phone.value.trim(),date:f.date.value,time:f.time.value,guests:f.guests.value,seating:f.seat.value},ref=save('reservation',d);
+  confirmBox('Table requested',[`<b>${esc(d.name)}</b>, we have your request.`,`${esc(d.date)} · ${esc(d.time)}<br>${esc(d.guests)} · ${esc(d.seating)}`],ref,`Hello TriStar 1947, table reservation (${ref}): ${d.guests}, ${d.date} at ${d.time}, ${d.seating}. Name: ${d.name}, Phone: ${d.phone}`);
+  rs.reset();$('#r-date').value=todayStr()});
+
+const od=$('#ordForm');wire(od);
+od.addEventListener('submit',e=>{e.preventDefault();const f=od.elements;let ok=true;
+  ok=flag(f.name,f.name.value.trim().length>1)&ok;ok=flag(f.phone,phoneOk(f.phone.value))&ok;if(!ok)return;
+  let t=0;const items=Object.keys(cart).filter(id=>MENU.some(m=>m.id==id)).map(id=>{const m=MENU.find(x=>x.id==id);t+=m.price*cart[id];return `${cart[id]}× ${m.name}`});
+  const d={name:f.name.value.trim(),phone:f.phone.value.trim(),items:items.join(', '),total:t},ref=save('order',d);
+  cart={};saveCart();renderMenu();od.reset();openCart(false);
+  confirmBox('Order placed',[`Thank you, <b>${esc(d.name)}</b>.`,esc(d.items),`Total <b>${rupee(t)}</b>`],ref,`Hello TriStar 1947, new order (${ref}): ${d.items}. Total ${rupee(t)}. Name: ${d.name}, Phone: ${d.phone}`)});
+
+$('#adminLink').onclick=()=>{const all=store.get('ts2_inbox',[]);
+  const rows=all.map(r=>`<tr><td>${esc(r.ref)}</td><td>${esc(r.kind)}</td><td>${new Date(r.at).toLocaleString()}</td><td>${esc(r.name)}<br>${esc(r.phone)}</td><td>${esc([r.type,r.date,r.time,r.guests,r.seating,r.items,r.total?rupee(r.total):''].filter(Boolean).join(' · '))}</td></tr>`).join('');
+  showModal(`<div style="text-align:left"><h3>Staff inbox</h3><p>Submissions made on this device (stored in this browser).</p>${all.length?`<table><thead><tr><th>Ref</th><th>Type</th><th>When</th><th>Guest</th><th>Details</th></tr></thead><tbody>${rows}</tbody></table>`:'<p style="padding:24px 0">Nothing yet.</p>'}
+  <div style="display:flex;gap:10px;margin-top:20px;flex-wrap:wrap">${all.length?'<button class="btn btn-line" id="csv" style="width:auto;margin:0;min-height:44px">Download CSV</button><button class="btn btn-line" id="clr" style="width:auto;margin:0;min-height:44px">Clear</button>':''}<button class="btn btn-solid" data-close style="width:auto;margin:0;min-height:44px">Close</button></div></div>`,true);
+  $('#csv')?.addEventListener('click',()=>{const cols=['ref','kind','at','name','phone','type','date','time','guests','seating','items','total'];
+    const csv=[cols.join(','),...all.map(r=>cols.map(c=>'"'+String(r[c]??'').replace(/"/g,'""')+'"').join(','))].join('\n');
+    const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv'}));a.download='tristar-inbox.csv';a.click()});
+  $('#clr')?.addEventListener('click',()=>{if(confirm('Clear all saved submissions?')){store.set('ts2_inbox',[]);modal.classList.remove('on')}})};
+
+const hdr=$('#hdr'),burger=$('#burger'),links=$('#links');
+const nav=o=>{links.classList.toggle('on',o);burger.setAttribute('aria-expanded',o);hdr.classList.toggle('open',o);document.body.style.overflow=o?'hidden':''};
+burger.onclick=()=>nav(!links.classList.contains('on'));
+$$('#links a').forEach(a=>a.addEventListener('click',()=>nav(false)));
+const onScroll=()=>hdr.classList.toggle('solid',scrollY>innerHeight*.6);onScroll();addEventListener('scroll',onScroll,{passive:true});
+const spy=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting)$$('#links a.l').forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+en.target.id))}),{rootMargin:'-45% 0px -50% 0px'});
+['story','houses','menu','visit','banquet'].forEach(id=>spy.observe($('#'+id)));
+addEventListener('keydown',e=>{if(e.key==='Escape'){openCart(false);nav(false);modal.classList.remove('on')}});
+let tt;function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('on');clearTimeout(tt);tt=setTimeout(()=>t.classList.remove('on'),1700)}
+const io=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}}),{threshold:.12});
+$$('.rv').forEach((el,i)=>{el.style.transitionDelay=(i%3)*90+'ms';io.observe(el)});
+renderMenu();renderCart();
+})();
+</script>
+</body>
+</html>
